@@ -9,11 +9,11 @@
             "RubberBandStretcher.h"
         ],
         "extra_objects": [
-            "rubberband/lib/librubberband.a"
+            "lib/mac_osx/librubberband.a"
         ],
         "include_dirs": [
             ".",
-            "rubberband/rubberband",
+            "rubberband/",
             "/Users/damongeorge/Applications/miniconda3/envs/rubberband/lib/python3.7/site-packages/numpy/core/include"
         ],
         "language": "c++",

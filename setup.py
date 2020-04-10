@@ -5,10 +5,10 @@ import numpy as np
 extensions = [
     Extension("rubber", ["rubber.pyx"],
               language="c++",
-              include_dirs=["rubberband/rubberband", np.get_include()],
+              include_dirs=["rubberband/", np.get_include()],
               libraries=["fftw3", "fftw3f", "samplerate", "sndfile"],
               library_dirs=["/usr/local/lib"],
-              extra_objects=["rubberband/lib/librubberband.a"]
+              extra_objects=["lib/mac_osx/librubberband.a"]
               )
 ]
 
