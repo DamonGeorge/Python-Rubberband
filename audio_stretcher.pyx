@@ -10,7 +10,7 @@ import time
 
 from RubberBandStretcher cimport RubberBandStretcher
 
-cdef class Rubber(object):
+cdef class AudioStretcher(object):
     cdef RubberBandStretcher* stretcher  # hold a pointer to the C++ instance which we're wrapping
     cdef bool realtime
 
@@ -60,7 +60,7 @@ cdef class Rubber(object):
 
     def __cinit__(self, int sample_rate=44100,
                         int channels=1,
-                        int options=Rubber.DefaultOptions,
+                        int options=AudioStretcher.DefaultOptions,
                         bool realtime=False,
                         double timeRatio=1.0,
                         double pitchScale=1.0):
@@ -71,7 +71,7 @@ cdef class Rubber(object):
         
         self.realtime = realtime
         if self.realtime:
-            options = options | Rubber.OptionProcessRealTime
+            options = options | AudioStretcher.OptionProcessRealTime
         self.stretcher = new RubberBandStretcher(sample_rate, channels, options, timeRatio, pitchScale)
         print(f"Options: {hex(options)}")
 

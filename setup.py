@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 import numpy as np
 
 extensions = [
-    Extension("rubber", ["rubber.pyx"],
+    Extension("rubberband", ["audio_stretcher.pyx"],
               language="c++",
               include_dirs=["rubberband/", np.get_include()],
               libraries=["fftw3", "fftw3f", "samplerate", "sndfile"],
